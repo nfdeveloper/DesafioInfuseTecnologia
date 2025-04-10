@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.nfdeveloper.consulta_creditos_api.dtos.creditos.CreditoResponseDTO;
+import com.github.nfdeveloper.consulta_creditos_api.exceptions.EntidadeNaoEncontradaException;
 import com.github.nfdeveloper.consulta_creditos_api.models.entitites.Credito;
 import com.github.nfdeveloper.consulta_creditos_api.repositories.CreditoRepository;
 
@@ -24,7 +25,7 @@ public class CreditoService {
 
     public CreditoResponseDTO listarPorNumeroCredito(String numeroCredito){
         Credito credito = repository.findByNumeroCredito(numeroCredito).orElseThrow(() -> {
-            throw new RuntimeException("Erro");
+            throw new EntidadeNaoEncontradaException(String.format("Crédito de número %s não encontrado.", numeroCredito));
         });
         return new CreditoResponseDTO(credito);
     }

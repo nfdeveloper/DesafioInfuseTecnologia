@@ -1,41 +1,36 @@
-package com.github.nfdeveloper.consulta_creditos_api.models.entitites;
+package com.github.nfdeveloper.consulta_creditos_api.dtos.creditos;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.github.nfdeveloper.consulta_creditos_api.models.entitites.Credito;
 
-@Entity
-@Table(name="credito")
-public class Credito {
-	
-    @Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
+public class CreditoResponseDTO {
+    private Long id;
     private String numeroCredito;
-	
     private String numeroNfse;
-	
     private LocalDate dataConstituicao;
-	
     private BigDecimal valorIssqn;
-	
     private String tipoCredito;
-	
     private boolean simplesNacional;
-	
     private BigDecimal aliquota;
-	
     private BigDecimal valorFaturado;
-	
     private BigDecimal valorDeducao;
-	
     private BigDecimal baseCalculo;
+
+    public CreditoResponseDTO(Credito obj) {
+        this.id = obj.getId();
+        this.numeroCredito = obj.getNumeroCredito();
+        this.numeroNfse = obj.getNumeroNfse();
+        this.dataConstituicao = obj.getDataConstituicao();
+        this.valorIssqn = obj.getValorIssqn();
+        this.tipoCredito = obj.getTipoCredito();
+        this.simplesNacional = obj.getIsSimplesNacional();
+        this.aliquota = obj.getAliquota();
+        this.valorFaturado = obj.getValorFaturado();
+        this.valorDeducao = obj.getValorDeducao();
+        this.baseCalculo = obj.getBaseCalculo();
+    }
 
     public Long getId() {
         return id;
@@ -85,7 +80,7 @@ public class Credito {
         this.tipoCredito = tipoCredito;
     }
 
-    public boolean getIsSimplesNacional() {
+    public boolean isSimplesNacional() {
         return simplesNacional;
     }
 
@@ -124,6 +119,4 @@ public class Credito {
     public void setBaseCalculo(BigDecimal baseCalculo) {
         this.baseCalculo = baseCalculo;
     }
-
-    
 }

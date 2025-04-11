@@ -26,7 +26,7 @@ public class CreditoController {
         return ResponseEntity.status(HttpStatus.OK).body(service.listarPorNumeroIdentificadorNfs(numeroNfse));
     }
 
-    @GetMapping("/{numeroCredito}")
+    @GetMapping("/credito/{numeroCredito}")
     public ResponseEntity<CreditoResponseDTO> buscarPorNumeroCredito(@PathVariable String numeroCredito){
         return ResponseEntity.status(HttpStatus.OK).body(service.listarPorNumeroCredito(numeroCredito));
     }

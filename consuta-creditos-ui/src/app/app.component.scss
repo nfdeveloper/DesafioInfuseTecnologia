@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .main {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .linha-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .linha-form label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+  
+  .linha-form select,
+  .linha-form input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .btn-card {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .tabela {
+    overflow-x: auto;
+  }
+  
+  .tabela table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tabela th,
+  .tabela td {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  
+  .tabela th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      padding: 0.5rem;
+    }
+  
+    .formulario {
+      gap: 0.75rem;
+    }
+  
+    .btn-card {
+      justify-content: center;
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  
+    .tabela th,
+    .tabela td {
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+  
+    .linha-form {
+      width: 100%;
+    }
+  }
+  

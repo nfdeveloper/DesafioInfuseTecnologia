@@ -1,1 +1,53 @@
-<router-outlet />
+<div class="main">
+    <div class="card">
+        <div class="formulario">
+            <div class="linha-form">
+                <label for="tipoPesquisa">Tipo Pesquisa:</label>
+                <select id="tipoPesquisa" [(ngModel)]="tipoPesquisaSelecionado" name="" >
+                    <option *ngFor="let tp of tiposPesquisa" value={{tp.valor}} >{{tp.label}}</option>
+                </select>            
+            </div>
+
+            <div class="linha-form">
+                <label for="pesquisa">Pesquisa:</label>
+                <input id="pesquisa" type="text" [(ngModel)]="pesquisa">
+            </div>
+
+        </div>
+        <div class="btn-card">
+            <button class="btn" (click)="pesquisar()" [disabled]="!pesquisa" >Pesquisar</button>
+        </div>
+        <div class="tabela" >
+            <table>
+                <thead>
+                    <tr>
+                        <th>Número Crédito</th>
+                        <th>Número NFS-e</th>
+                        <th>Data Constituição</th>
+                        <th>Valor ISSQn</th>
+                        <th>Tipo Crédito</th>
+                        <th>Simples Nacional</th>
+                        <th>Aliquota</th>
+                        <th>Valor Faturado</th>
+                        <th>Valor Dedução</th>
+                        <th>Base Calculo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cr of creditos">
+                        <td>{{cr.numeroCredito}}</td>
+                        <td>{{cr.numeroNfse}}</td>
+                        <td>{{cr.dataConstituicao | date:"dd/MM/yyy"}}</td>
+                        <td>{{cr.valorIssqn}}</td>
+                        <td>{{cr.tipoCredito}}</td>
+                        <td>{{cr.simplesNacional ? "Sim" : "Não"}}</td>
+                        <td>{{cr.aliquota}}</td>
+                        <td>{{cr.valorFaturado}}</td>
+                        <td>{{cr.valorDeducao}}</td>
+                        <td>{{cr.baseCalculo}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

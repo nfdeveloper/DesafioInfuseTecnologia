@@ -1,98 +1,103 @@
+
 # Desafio Infuse Tecnologia
 
 Projeto para resolução do teste técnico para vaga Desenvolvedor Full Stack Java da empresa Infuse Tecnologia.
 
-## 🚀 Começando
+As intruções para a implementação do Projeto:
 
-Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
+- [Documentação Teste](https://docs.google.com/document/d/1gQUPZIgcua4qDxEAVek2e_VPV8jO6_qceP9xEb90wd0/edit?tab=t.0)
 
-Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
+## 🛠️ Stack utilizada
 
-### 📋 Pré-requisitos
+- **Front-end:** Angular 17, Scss
 
-Java 17+
-Node 21+
-Angular Cli v17
-PostgreSQL v13
-Docker
-Docker Compose
+- **Back-end:** Java 17, Spring Boot 3+, PostgresSQL
 
-### 🔧 Instalação
+- **Testes:** JUnit, Mockito
 
-Clonar o Projeto:
+- **Conteinerização:** Docker, Docker Compose
 
-```
+
+
+## 🔧 Instalação
+
+Clone o repositório na maquina local:
+
+```bash
 git clone https://github.com/nfdeveloper/DesafioInfuseTecnologia.git
 ```
 
-Após o projeto ser clonado na sua máquina, há duas formas de executar a aplicação:
+Após a clonagem da aplicação a duas formas de roda-lá na maquina local:
 
-```
+- ### [Docker](#docker) 
 
-```
+- ### <a name=“docker”><a/> Utilizando Docker e Docker Compose
 
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
+    Acesse a pasta da Aplicação:
 
-## ⚙️ Executando os testes
+    ```bash
+    cd ./DesafioInfuseTecnologia/
+    ```
 
-Explicar como executar os testes automatizados para este sistema.
+    Execute o comando:
 
-### 🔩 Analise os testes de ponta a ponta
+    ```bash
+    docker compose up
+    ```
 
-Explique que eles verificam esses testes e porquê.
+    A aplicação será acessada através da URL:
 
-```
-Dar exemplos
-```
+    ```bash
+    http://localhost:4200
+    ```
+    
 
-### ⌨️ E testes de estilo de codificação
+- ### Sem Utilizar Docker
 
-Explique que eles verificam esses testes e porquê.
+- #### Front End
 
-```
-Dar exemplos
-```
+    Acesse a pasta da aplicação Front End:
 
-## 📦 Implantação
+    ```bash
+    cd ./DesafioInfuseTecnologia/consuta-creditos-ui/
+    ```
 
-Adicione notas adicionais sobre como implantar isso em um sistema ativo
+    Execute o comando para instalar as dependências do Node:
 
-## 🛠️ Construído com
+    ```bash
+    npm install
+    ```
 
-Mencione as ferramentas que você usou para criar seu projeto
+    Após esses passos o projeto front end poderá ser executado com o seguinte comando:
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - O framework web usado
-* [Maven](https://maven.apache.org/) - Gerente de Dependência
-* [ROME](https://rometools.github.io/rome/) - Usada para gerar RSS
+    ```bash
+    ng s
+    ```
 
-## 🖇️ Colaborando
+    A aplicação será acessada através da URL:
 
-Por favor, leia o [COLABORACAO.md](https://gist.github.com/usuario/linkParaInfoSobreContribuicoes) para obter detalhes sobre o nosso código de conduta e o processo para nos enviar pedidos de solicitação.
+    ```bash
+    http://localhost:4200
+    ```
+    
+- #### Back End
 
-## 📌 Versão
+    Acesse a pasta da aplicação Front End:
 
-Nós usamos [SemVer](http://semver.org/) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/suas/tags/do/projeto). 
+    ```bash
+    cd ./DesafioInfuseTecnologia/consulta-creditos-api/
+    ```
 
-## ✒️ Autores
+    Execute o comando para instalar as dependências do Maven:
 
-Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
+    ```bash
+    mvn install
+    ```
 
-* **Um desenvolvedor** - *Trabalho Inicial* - [umdesenvolvedor](https://github.com/linkParaPerfil)
-* **Fulano De Tal** - *Documentação* - [fulanodetal](https://github.com/linkParaPerfil)
+    - **OBS:** Para a instalação do projeto na máquina local, é necessário que o banco de dados Postgres v13+ esteja previamente instalado, e que dentro do mesmo haja um banco de dados com o nome postgres. Pois a aplicação usa o Flyway como ferramente para gerenciamento de migrações. Sendo assim, na primeira execução da aplicação a mesma criará dentro deste banco a tabela necessário assim como irá inserir alguns dados.
 
-Você também pode ver a lista de todos os [colaboradores](https://github.com/usuario/projeto/colaboradores) que participaram deste projeto.
+    Após esses passos basta executar o comando: 
 
-## 📄 Licença
-
-Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](https://github.com/usuario/projeto/licenca) para detalhes.
-
-## 🎁 Expressões de gratidão
-
-* Conte a outras pessoas sobre este projeto 📢;
-* Convide alguém da equipe para uma cerveja 🍺;
-* Um agradecimento publicamente 🫂;
-* etc.
-
-
----
-⌨️ com ❤️ por [Armstrong Lohãns](https://gist.github.com/lohhans) 😊
+    ```bash
+    mvn spring-boot:run
+    ```

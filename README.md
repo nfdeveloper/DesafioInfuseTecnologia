@@ -29,7 +29,9 @@ git clone https://github.com/nfdeveloper/DesafioInfuseTecnologia.git
 
 Após a clonagem da aplicação a duas formas de roda-lá na maquina local:
 
-- ### [Docker](#docker) 
+- ### [Utilizando Docker](#docker)
+
+- ### [Instalando a Aplicação localmente](#localmente)
 
 - ### <a name=“docker”><a/> Utilizando Docker e Docker Compose
 
@@ -52,7 +54,7 @@ Após a clonagem da aplicação a duas formas de roda-lá na maquina local:
     ```
     
 
-- ### Sem Utilizar Docker
+- ### <a name=“localmente”><a/> Instalação Local
 
 - #### Front End
 
